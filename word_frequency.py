@@ -39,11 +39,12 @@ def calculate_frequencies(sentence):
     word_counts = []
     
     for word in words_list:
-        if word in word_names:
-            index = word_names.index(word)
+        word_lower = word.lower()
+        if word_lower in word_names:
+            index = word_names.index(word_lower)
             word_counts[index] += 1
         else:
-            word_names.append(word)
+            word_names.append(word_lower)
             word_counts.append(1)
     
     return word_names, word_counts
